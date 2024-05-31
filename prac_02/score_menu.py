@@ -50,7 +50,10 @@ def main():
             else:
                 print_result(score)
         elif choice == "S":
-            show_stars(score)
+            if score == "":
+                print("error massage")
+            else:
+                show_stars(score)
         elif choice == "Q":
             print("Thank you!")
         else:
