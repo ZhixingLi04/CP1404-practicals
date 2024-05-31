@@ -19,6 +19,7 @@ def determine_result(score):
         return "Excellent"
 
 
+
 def print_result(score):
     """show the result"""
     result = determine_result(score)
