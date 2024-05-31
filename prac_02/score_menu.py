@@ -20,6 +20,7 @@ def determine_result(score):
 
 
 
+
 def print_result(score):
     """show the result"""
     result = determine_result(score)
