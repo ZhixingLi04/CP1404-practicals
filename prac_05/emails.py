@@ -4,7 +4,6 @@ Estimate: 45 minutes
 """
 
 
-
 def extract_name_from_email(email):
     """Extract a name from the email address."""
     email_username = email.split('@')[0]

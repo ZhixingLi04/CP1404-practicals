@@ -4,6 +4,7 @@ Estimate: 30 minutes
 """
 
 
+
 # Define a constant dictionary of colour names and their corresponding hex codes
 COLOUR_CODES = {
     "ALICEBLUE": "#F0F8FF",

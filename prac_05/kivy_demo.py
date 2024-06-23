@@ -4,7 +4,6 @@ from kivy.properties import StringProperty
 from kivy.uix.button import Button
 
 
-
 class KivyDemo(App):
     """Kivy program to demo some basic interactive functionality."""
     status_text = StringProperty("Hello. Click the buttons :)")
