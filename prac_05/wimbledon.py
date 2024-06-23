@@ -4,7 +4,6 @@ filename = 'wimbledon.csv'
 year_to_data = {}
 datas = []
 
-
 def main():
     """Display the player names and their frequencies by country."""
     year_to_data = read_wimbledon_data()

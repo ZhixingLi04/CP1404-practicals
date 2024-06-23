@@ -4,7 +4,6 @@ Estimate: 45 minutes
 Actual:   50 minutes
 """
 
-
 def main():
     text = input("Enter a string: ")
     words = text.split()
