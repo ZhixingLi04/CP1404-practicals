@@ -27,6 +27,7 @@ def main():
         print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:20,.2f}{vintage_string}")
 
 
+
 if __name__ == "__main__":
     main()
 
