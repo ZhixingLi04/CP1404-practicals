@@ -26,4 +26,3 @@ class Project:
     def __eq__(self, other):
         return self.priority == other.priority
 
-
