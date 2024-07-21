@@ -86,6 +86,64 @@ def save_projects(filename, projects):
                 f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate:.2f}\t{project.completion_pct}\n")
 
 
+def display_projects(projects):
+    incomplete_projects = sorted([p for p in projects if p.completion_pct < 100])
+    completed_projects = sorted([p for p in projects if p.completion_pct == 100])
+
+    print("Incomplete projects:")
+    for project in incomplete_projects:
+        print(f"  {project}")
+
+    print("\nCompleted projects:")
+    for project in completed_projects:
+        print(f"  {project}")
+
+
+def filter_projects_by_date(projects, filter_date):
+    try:
+        filter_date_obj = datetime.datetime.strptime(filter_date, "%d/%m/%Y").date()
+        filtered_projects = [p for p in projects if p.start_date >= filter_date_obj]
+        filtered_projects_sorted = sorted(filtered_projects, key=lambda p: p.start_date)
+
+        print(f"Projects starting after {filter_date}:")
+        for project in filtered_projects_sorted:
+            print(f"  {project}")
+    except ValueError:
+        print("Invalid date format. Please use dd/mm/yyyy.")
+
+
+def add_new_project(projects):
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yyyy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    completion_pct = int(input("Percent complete: "))
+
+    projects.append(Project(name, start_date, priority, cost_estimate, completion_pct))
+
+
+def update_project(projects):
+    print("Select a project to update:")
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+
+    choice = int(input("Project choice: "))
+    print(projects[choice])
+    if 0 <= choice < len(projects):
+        project = projects[choice]
+        new_completion = input(f"New Percentage : ")
+        if new_completion:
+            project.update_completion(int(new_completion))
+
+        new_priority = input(f"New Priority : ")
+        if new_priority:
+            project.update_priority(int(new_priority))
+
+
+if __name__ == "__main__":
+    main()
+
 
 
 
