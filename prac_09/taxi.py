@@ -32,3 +32,4 @@ class Taxi(Car):
         self.current_fare_distance += distance_driven
         return distance_driven
 
+

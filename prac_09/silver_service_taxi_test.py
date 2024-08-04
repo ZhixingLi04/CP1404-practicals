@@ -28,3 +28,4 @@ class Taxi(SilverServiceTaxi):
         self.current_fare_distance += distance_driven
         return distance_driven
 
+
